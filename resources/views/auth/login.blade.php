@@ -1,24 +1,24 @@
 @extends('layouts.app')
 
 @section('title', 'Login Administrator')
-@section('meta_description', 'Masuk ke panel manajemen administrator Clameverg.')
+@section('meta_description', 'Masuk ke panel manajemen administrator Houberg Academy.')
 
 @section('content')
 <div class="min-h-[75vh] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-neutral-50">
     <div class="max-w-md w-full space-y-8 bg-white p-8 sm:p-10 rounded-2xl border border-neutral-200 shadow-md">
         <div class="text-center space-y-2">
-            <div class="inline-flex w-12 h-12 rounded-xl bg-burnt-brick/10 text-burnt-brick items-center justify-center shadow-inner mb-2 border border-burnt-brick/20">
+            <div class="inline-flex w-12 h-12 rounded-xl bg-primary/10 text-primary items-center justify-center shadow-inner mb-2 border border-primary/20">
                 <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5z"/>
                     <path d="M12 8v4"/>
                     <path d="M12 16h.01"/>
                 </svg>
             </div>
-            <h1 class="text-2xl font-extrabold text-industry-black tracking-tight">
+            <h1 class="text-2xl font-extrabold text-navy-900 tracking-tight">
                 Admin Panel Login
             </h1>
-            <p class="text-xs text-dark-mahogany">
-                Akses terbatas untuk administrator Clameverg
+            <p class="text-xs text-slate-600">
+                Akses terbatas untuk administrator Houberg Academy
             </p>
         </div>
 

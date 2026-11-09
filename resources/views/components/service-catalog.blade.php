@@ -6,8 +6,9 @@
     $catalogGeographicSlug = $catalogGeographicSlug ?? null;
 @endphp
 <section id="layanan"
-         class="bg-[#F8FAFC] py-14 sm:py-20 lg:py-24"
+         class="bg-[#F8FAFC] py-14 sm:py-20 lg:py-24 relative"
          aria-labelledby="layanan-heading">
+    <div id="program" class="absolute -top-16 left-0" aria-hidden="true"></div>
 
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
@@ -46,7 +47,8 @@
                     $listId = 'category-list-' . $categorySlug;
                 @endphp
 
-                <article data-scheme-section="{{ $categorySlug }}"
+                <article id="{{ $categorySlug }}"
+                         data-scheme-section="{{ $categorySlug }}"
                          data-scheme-category="{{ $category['name'] }}"
                          data-show-group
                          class="group flex min-w-0 flex-col overflow-hidden rounded-2xl border border-[#E1E5EA] bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[#14B8A6]/50">

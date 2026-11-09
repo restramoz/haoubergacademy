@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Clameverg'),
+    'name' => env('APP_NAME', 'Houberg Academy'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://clameverg.my.id'),
+    'url' => env('APP_URL', 'https://houberg.academy'),
 
     /*
     |--------------------------------------------------------------------------

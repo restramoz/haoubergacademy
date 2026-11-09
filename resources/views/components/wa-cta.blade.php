@@ -27,7 +27,7 @@
     {{-- No usable phone configured: render neutral non-link contact text --}}
     {{-- instead of a clickable button that cannot work. CTA styling helpers --}}
     {{-- passed by callers are intentionally ignored here. --}}
-    <span class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-concrete-100 border border-concrete-300 text-dark-mahogany font-bold text-sm sm:text-base">
+    <span class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-100 border border-neutral-300 text-slate-600 font-bold text-sm sm:text-base">
         <span aria-hidden="true">•</span>
         {{ \App\Support\WhatsApp::fallbackText() }}
     </span>

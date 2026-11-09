@@ -78,7 +78,7 @@ Route::get('/kota/{slug}', [RegionalController::class, 'city'])
     ->name('regional.city')
     ->where('slug', '[a-z0-9\-]+');
 
-// District landing pages are not public in Clameverg.
+// District landing pages are not public in Houberg Academy.
 
 // Legacy compatibility redirects (from reference project URL structures)
 Route::get('/kota-{slug}', [RegionalController::class, 'legacyCityRedirect'])

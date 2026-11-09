@@ -119,7 +119,7 @@ class ProgramController extends Controller
             'region' => $context,
             'articles' => $articles,
             'pageTitle' => $programData['title'].' '.$context['name'],
-            'pageDescription' => 'Informasi '.$programData['title'].' untuk '.$context['name'].'. Tinjau ruang lingkup dan rincian yang tersedia dalam katalog layanan Clameverg.',
+            'pageDescription' => 'Informasi '.$programData['title'].' untuk '.$context['name'].'. Tinjau ruang lingkup dan rincian yang tersedia dalam katalog layanan Houberg Academy.',
             'waMessage' => 'Halo, saya ingin menanyakan informasi '.$programData['title'].' untuk '.$context['name'].'.',
         ]);
     }
@@ -131,7 +131,7 @@ class ProgramController extends Controller
         $program = $this->schemes->find($slug);
         abort_if($program === null, 404, 'Layanan atau program pelatihan tidak ditemukan.');
 
-        $contextName = 'Konteks Regional Clameverg';
+        $contextName = 'Konteks Regional Houberg Academy';
         $landingUrl = route('home');
         $canonicalUrl = rtrim((string) config('app.url'), '/').route('regional.services.show', ['slug' => $program['slug']], false);
         $lastRegional = session('last_regional_slug');
@@ -161,7 +161,7 @@ class ProgramController extends Controller
             'otherPrograms' => $relatedPrograms,
             'region' => $region,
             'pageTitle' => $program['title'].' '.$contextName,
-            'pageDescription' => 'Informasi '.$program['title'].' untuk '.$contextName.'. Tinjau ruang lingkup dan rincian yang tersedia dalam katalog layanan Clameverg.',
+            'pageDescription' => 'Informasi '.$program['title'].' untuk '.$contextName.'. Tinjau ruang lingkup dan rincian yang tersedia dalam katalog layanan Houberg Academy.',
             'waMessage' => 'Halo, saya ingin menanyakan informasi '.$program['title'].' untuk '.$contextName.'.',
         ]);
     }
@@ -174,7 +174,7 @@ class ProgramController extends Controller
         $program = $this->schemes->find($slug);
         abort_if($program === null, 404, 'Layanan atau program pelatihan tidak ditemukan.');
 
-        $contextName = 'Konteks Kota Clameverg';
+        $contextName = 'Konteks Kota Houberg Academy';
         $landingUrl = route('home');
         $canonicalUrl = rtrim((string) config('app.url'), '/').route('city.services.show', ['slug' => $program['slug']], false);
         $lastCity = session('last_city_slug');
@@ -204,7 +204,7 @@ class ProgramController extends Controller
             'otherPrograms' => $relatedPrograms,
             'region' => $region,
             'pageTitle' => $program['title'].' '.$contextName,
-            'pageDescription' => 'Informasi '.$program['title'].' untuk '.$contextName.'. Tinjau ruang lingkup dan rincian yang tersedia dalam katalog layanan Clameverg.',
+            'pageDescription' => 'Informasi '.$program['title'].' untuk '.$contextName.'. Tinjau ruang lingkup dan rincian yang tersedia dalam katalog layanan Houberg Academy.',
             'waMessage' => 'Halo, saya ingin menanyakan informasi '.$program['title'].' untuk '.$contextName.'.',
         ]);
     }
@@ -261,7 +261,7 @@ class ProgramController extends Controller
             'region' => $context,
             'articles' => $articles,
             'pageTitle' => $programData['title'].' '.$contextName,
-            'pageDescription' => 'Informasi '.$programData['title'].' untuk '.$contextName.'. Tinjau ruang lingkup dan rincian yang tersedia dalam katalog layanan Clameverg.',
+            'pageDescription' => 'Informasi '.$programData['title'].' untuk '.$contextName.'. Tinjau ruang lingkup dan rincian yang tersedia dalam katalog layanan Houberg Academy.',
             'waMessage' => 'Halo, saya ingin menanyakan informasi '.$programData['title'].' untuk '.$contextName.'.',
         ]);
     }

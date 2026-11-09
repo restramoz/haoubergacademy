@@ -9,7 +9,7 @@
 @php
     // Brand appears exactly once: only append when not already present
     // (case-insensitive), e.g. scheme meta_title already ends with the brand.
-    $brandName = trim((string) config('app.name', 'Clameverg'));
+    $brandName = trim((string) config('app.name', 'Houberg Academy'));
     $brandTitle = trim((string) View::getSection('title'));
     if ($brandTitle === '') {
         $brandTitle = $brandName;
@@ -20,19 +20,19 @@
 
     <!-- Isi judul section sudah di-escape di titik penyimpanannya (startSection), jadi cetak apa adanya. -->
     <title>{!! $brandTitle !!}</title>
-    <meta name="description" content="@yield('meta_description', 'Jelajahi katalog layanan profesional Clameverg dan temukan informasi yang tersedia untuk setiap program.')">
+    <meta name="description" content="@yield('meta_description', 'Houberg Academy adalah platform Learning & Development untuk pengembangan kompetensi profesional. Jelajahi 4.177+ program di 21 kategori, tersedia di 38 provinsi. Konsultasi gratis via WhatsApp.')">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="@yield('canonical_url', rtrim(config('app.url'), '/') . request()->getPathInfo())">
 
     <!-- Open Graph / Meta -->
     <meta property="og:title" content="{!! $brandTitle !!}">
-    <meta property="og:description" content="@yield('meta_description', 'Jelajahi katalog layanan profesional Clameverg dan temukan informasi yang tersedia untuk setiap program.')">
+    <meta property="og:description" content="@yield('meta_description', 'Houberg Academy adalah platform Learning & Development untuk pengembangan kompetensi profesional. Jelajahi 4.177+ program di 21 kategori, tersedia di 38 provinsi. Konsultasi gratis via WhatsApp.')">
     <meta property="og:type" content="website">
     <meta property="og:url" content="@yield('canonical_url', rtrim(config('app.url'), '/') . request()->getPathInfo())">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{!! $brandTitle !!}">
-    <meta name="twitter:description" content="@yield('meta_description', 'Jelajahi katalog layanan profesional Clameverg.')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Houberg Academy menyediakan akses terarah ke 4.177+ program pembelajaran di 21 kategori. Temukan jalur pengembangan kompetensi yang sesuai dengan tujuan karir Anda.')">
 
     <!-- Theme Color -->
     <meta name="theme-color" content="#4F46E5">

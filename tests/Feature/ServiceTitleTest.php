@@ -16,7 +16,7 @@ class ServiceTitleTest extends TestCase
         $this->assertMatchesRegularExpression('/<title>(.*?)<\/title>/s', $html);
         preg_match('/<title>(.*?)<\/title>/s', $html, $matches);
 
-        return substr_count(mb_strtolower($matches[1]), 'clameverg');
+        return substr_count(mb_strtolower($matches[1]), mb_strtolower(config('app.name', 'Houberg Academy')));
     }
 
     private function titleTag(string $html): string
@@ -29,33 +29,36 @@ class ServiceTitleTest extends TestCase
     public function test_generic_service_title_contains_brand_exactly_once(): void
     {
         $slug = array_key_first(app(\App\Services\SchemeService::class)->all());
+        $brand = config('app.name', 'Houberg Academy');
 
-        // meta_title already carries the brand ("Judul | Clameverg"): the
+        // meta_title already carries the brand ("Judul | Brand"): the
         // layout must not append it a second time.
         $html = $this->get('/layanan/'.$slug)->assertOk()->getContent();
 
         $this->assertSame(1, $this->brandCountInTitle($html));
         $this->assertStringContainsString(' | ', $this->titleTag($html));
-        $this->assertStringNotContainsString('— Clameverg', $this->titleTag($html));
+        $this->assertStringNotContainsString('— ' . $brand, $this->titleTag($html));
     }
 
     public function test_regional_service_title_keeps_regional_context_and_single_brand(): void
     {
+        $brand = config('app.name', 'Houberg Academy');
         $html = $this->get('/kota-malang/analisis-pelumas-unit-alat-berat')->assertOk()->getContent();
         $title = $this->titleTag($html);
 
         $this->assertSame(1, $this->brandCountInTitle($html));
         $this->assertStringContainsString('Kota Malang', $title);
-        $this->assertStringEndsWith('— Clameverg', $title);
+        $this->assertStringEndsWith('— ' . $brand, $title);
     }
 
     public function test_og_and_twitter_titles_match_the_document_title(): void
     {
+        $brand = config('app.name', 'Houberg Academy');
         $html = $this->get('/artikel')->assertOk()->getContent();
         $title = $this->titleTag($html);
 
-        $this->assertMatchesRegularExpression('/<meta property="og:title" content="[^"]*Clameverg[^"]*">/', $html);
-        $this->assertMatchesRegularExpression('/<meta name="twitter:title" content="[^"]*Clameverg[^"]*">/', $html);
+        $this->assertMatchesRegularExpression('/<meta property="og:title" content="[^"]*' . preg_quote($brand, '/') . '[^"]*">/', $html);
+        $this->assertMatchesRegularExpression('/<meta name="twitter:title" content="[^"]*' . preg_quote($brand, '/') . '[^"]*">/', $html);
 
         preg_match('/<meta property="og:title" content="(.*?)">/', $html, $og);
         preg_match('/<meta name="twitter:title" content="(.*?)">/', $html, $tw);
